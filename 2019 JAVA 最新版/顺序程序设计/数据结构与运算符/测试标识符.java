@@ -23,5 +23,5 @@ public class Main {
     // 关键字不能作为标识符
     // int class;
 
-    }
+  }
 }
