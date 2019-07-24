@@ -1,4 +1,4 @@
-// 定义个一类
+// 定义一个类
 public class Main {
   // 定义 main 主函数
   public static void main(String[] args) {
