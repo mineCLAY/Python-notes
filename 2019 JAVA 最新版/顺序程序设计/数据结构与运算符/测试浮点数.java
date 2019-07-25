@@ -31,7 +31,11 @@ public class TestPrimitiveDataType {
       System.out.printf("d1 != d2\n");
     }
 
-    // 用 BigDecimal 比较浮点数
+    /*
+     * 使用精确的浮点运算
+     * 推荐:
+     * BigDecimal
+     */
     BigDecimal bd = BigDecimal.valueOf(1.0);
     bd = bd.subtract(BigDecimal.valueOf(0.1));
     bd = bd.subtract(BigDecimal.valueOf(0.1));
@@ -44,6 +48,12 @@ public class TestPrimitiveDataType {
     System.out.println(bd);
     // 输出 0.5000000000000001
     System.out.println(1.0 - 0.1 - 0.1 - 0.1 - 0.1 -0.1);
+
+    BigDecimal bd2 = BigDecimal.valueOf(0.1);
+    BigDecimal bd3 = BigDecimal.valueOf(1.0 / 10.0);
+
+    // 输出 true
+    System.put.println(bd2 .equals (bd3));
 
   }
 }
