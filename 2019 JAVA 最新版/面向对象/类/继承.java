@@ -23,7 +23,7 @@
  *    java.lang.Object
  */
 
-public class TestImport {
+public class TestExtends {
 
   public static void main(String[] args) {
 
