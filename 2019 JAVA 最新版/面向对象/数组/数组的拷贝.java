@@ -1,8 +1,20 @@
 /*
  * 数组的拷贝
+ *
+ * 1. 数组的删除
+ *
+ *    从数组中删除某个元素
+ *    (本质上还是数组的拷贝)
+ *
+ * 2. 数组的扩容
+ *
+ *    本质上:
+ *    先定义一个更大的数组
+ *    然后将原数组原封不动
+ *    拷贝到新数组中
  */
 
-public class TestArrayCopy {
+public class Test {
 
   public static void main(String[] args) {
 
@@ -14,6 +26,12 @@ public class TestArrayCopy {
 
     // 调用方法 removeElment
     removeElment(str , 1);
+
+    /*
+     * 将方法 extendsRange
+     * 返回值赋给 str
+     */
+    str = extendRange(str);
 
     return;
   }
@@ -40,9 +58,6 @@ public class TestArrayCopy {
 
   /*
    * 定义方法 testBasicCopy
-   *
-   * 从数组中删除某个元素
-   * (本质上还是数组的拷贝)
    *
    * 删除数组指定索引位置的元素
    * 并将原数组返回
@@ -94,6 +109,38 @@ public class TestArrayCopy {
 
     // 将 s 返回 main 方法
     return s;
+
+  }
+
+  /*
+   * 数组的扩容
+   */
+  public static String[] extendRange(String str1[]) {
+
+    // 定义数组
+    String str2[] = new String[str1.length + 10];
+
+    /*
+     * 拷贝数组
+     *
+     * 就将 str1 中所有的元素
+     * 拷贝到了 str2
+     */
+    System.arraycopy(str1 , 0 , str2 , 0 , str1.length);
+
+    // 输出换行
+    System.out.println();
+
+    // 可以用增强 for 输出
+    for (String temp:str2) {
+
+      // 输出
+      System.out.println(temp);
+
+    }
+
+    // 将 str2 返回 main 方法
+    return str2;
 
   }
 
