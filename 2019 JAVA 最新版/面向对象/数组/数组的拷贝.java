@@ -14,7 +14,7 @@
  *    拷贝到新数组中
  */
 
-public class Test {
+public class ArrayCopy {
 
   public static void main(String[] args) {
 
@@ -32,6 +32,9 @@ public class Test {
      * 返回值赋给 str
      */
     str = extendRange(str);
+
+    // 调用方法 arrayInsertion
+    str = arrayInsertion(str , "I'm GOD" , 0);
 
     return;
   }
@@ -60,7 +63,7 @@ public class Test {
    * 定义方法 testBasicCopy
    *
    * 删除数组指定索引位置的元素
-   * 并将原数组返回
+   * 并将数组返回
    */
   public static void testBasicCopy() {
 
@@ -86,7 +89,7 @@ public class Test {
    * 定义方法 removeElment
    *
    * 实现删除数组中指定索引位置的元素
-   * 并将原数组返回
+   * 并将数组返回
    */
   public static String[] removeElment(String s[] , int index) {
 
@@ -131,7 +134,7 @@ public class Test {
     // 输出换行
     System.out.println();
 
-    // 可以用增强 for 输出
+    // 用增强 for 输出
     for (String temp:str2) {
 
       // 输出
@@ -142,6 +145,44 @@ public class Test {
     // 将 str2 返回 main 方法
     return str2;
 
+  }
+
+  /*
+   * 数组的插入
+   *
+   * 定义方法 arrayInsertion
+   * 实现插入数组中指定索引位置的元素
+   * 并将数组返回
+   */
+  public static String[] arrayInsertion(String str[] , String str1 , int index) {
+
+    // 定义数组
+    String str2[] = new String[str.length + 1];
+
+    // 开始拷贝数组
+    for (int i = 0; i < str.length; i++) {
+      str2[i] = str[i];
+    }
+
+    // 开始数组的拷贝
+    System.arraycopy(str , index , str2 , index + 1 , str.length - index);
+
+    // 开始插入数组指定的位置
+    str2[index] = str1;
+
+    // 输出换行
+    System.out.println();
+
+    // 循环输出
+    for (int i= 0; i < str2.length; i++) {
+
+      // 输出
+      System.out.println(i + " -- " + str2[i]);
+
+    }
+
+    // 将 str2 返回 main 方法
+    return str2;
   }
 
 }
