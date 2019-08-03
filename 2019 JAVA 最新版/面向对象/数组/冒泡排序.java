@@ -5,7 +5,7 @@
 // 导入包 java.util.Arrays 所有类
 import java.util.Arrays;
 
-public class test {
+public class TestBubbleSort {
 
   public static void main(String[] args) {
 
